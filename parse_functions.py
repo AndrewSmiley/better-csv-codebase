@@ -5,7 +5,6 @@ Function to read a file and return a string of the contents
 """
 
 class BetterCSV:
-
     def make_parseable(self,string,characters):
         for search,replace_with in characters.iteritems():
                 if search in string:
@@ -22,7 +21,6 @@ class BetterCSV:
         values = f.read()
         f.close()
         return values
-
 
 
     def search(self,search_terms, search_values,threshold=0):
@@ -262,6 +260,31 @@ class BetterCSV:
         return dicts
 
 
+    """
+    Function to find the first index of a partular row (i.e. a list inside of our collection of list)
+    searchterm: The string searchterm to look for
+    rows: The list of lists to search in
+    """
+    def find_row(self, searchterm, rows):
+        #todo-fill this one in
+        pass
+
+    """
+    Function to the index of all rows that contain the search term
+    searchterm: The string searchterm to look for
+    rows: The list of lists to search in
+    """
+    def find_rows(self, searchterm, rows):
+        indexes = []
+        #todo-fill this one in
+        return indexes
+    """
+    Function to append list_a into list_b
+    """
+    def append_list(self, list_a, list_b):
+
+        #todo-fill me in
+        return list_a
 
 
 
