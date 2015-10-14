@@ -67,7 +67,11 @@ class ParseTestCases(unittest.TestCase):
         self.assertEqual(self.better_csv.make_parseable("4060T96 P02 (5023T67 / 5023T59 / 1934T24)", {"/": " ", "(":" ",")":" "}), "4060T96 P02  5023T67   5023T59   1934T24 ")
     def test_23(self):
         self.assertEqual(self.better_csv.make_parseable("D191102 (4126T26/4145T05)", {"/": " ", "(":" ",")":" "}), "D191102  4126T26 4145T05 ")
+    def test_24(self):
+
+        self.assertAlmostEqual(self.better_csv.find_row("Grand Cherokee",self.better_csv.get_lists(self.better_csv.get_lines( self.better_csv.file_contents_as_string("test_data.csv")))),4)
 if __name__ == '__main__':
+
     unittest.main()
 
 # decompiled 1 files: 1 okay, 0 failed, 0 verify failed

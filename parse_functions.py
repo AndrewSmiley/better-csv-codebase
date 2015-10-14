@@ -266,8 +266,14 @@ class BetterCSV:
     rows: The list of lists to search in
     """
     def find_row(self, searchterm, rows):
+        for row in rows:
+            try:
+                if row.index(searchterm):
+                    return rows.index(row)
+            except Exception:
+                continue
         #todo-fill this one in
-        pass
+        raise Exception("Could not Find Row")
 
     """
     Function to the index of all rows that contain the search term
@@ -286,7 +292,11 @@ class BetterCSV:
         #todo-fill me in
         return list_a
 
-
+    def file_contents_as_string(self, filename):
+        file=open(filename, "r")
+        file_contents=file.read()
+        file.close()
+        return file_contents
 
 
 
